@@ -3,3 +3,6 @@
     src: url(../src/assets/font/Outfit-VariableFont_wght.ttf);
 }
 
+:root{
+    --main-bg: #a5f3fc;
+}
