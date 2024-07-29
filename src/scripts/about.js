@@ -29,12 +29,14 @@ function createImage(){
 function createAboutText(){
     const textContainer = document.querySelector(".about-text");
 
-    const header = document.createElement("h1");
+    const header = document.createElement("p");
+    header.classList.add("about-header");
     header.textContent = "About Me";
     textContainer.appendChild(header);
 
     const text = document.createElement("p");
-    text.textContent = "I am John, Iam a full stack developer with experience in JavaScript, React, Node.js, and Ruby on Rails. I am passionate about creating user-friendly applications that are both functional and visually appealing. I am currently seeking new opportunities to further develop my skills and contribute to a team.";
+    text.classList.add("about-text-para");
+    text.textContent = "I am John, I am a full stack developer with experience in JavaScript, React, Node.js, and MongoDB. I am passionate about creating user friendly applications that are both functional and visually appealing and I am currently seeking new opportunities to further develop my skills and contribute to a team.";
     textContainer.appendChild(text);
 
     const contacts = createContacts();

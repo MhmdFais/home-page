@@ -37,12 +37,6 @@ body{
     margin-bottom: 20px;
 }
 
-.about-text {
-    font-size: 1.2em;
-    text-align: center;
-    max-width: 600px;
-    padding: 0 20px;
-}
 
 .about-image img{
     width: 25vw;
@@ -51,17 +45,45 @@ body{
     position: relative;
 }
 
-.about-text{
+.contact-image{
+    padding-top: 1vh;
+    height: auto;
+    width: 2vw;
+}
+
+.about-text {
+    text-align: start;
+    padding: 2vh 5vw;
+    max-width: 40vw;
     background-color: aliceblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    gap: 2vh;
 }
 
-.contact-image{
-    height: auto;
-    width: 2vw;
+.about-text p{
+    padding: 0;
+    margin: 0;
 }
 
+.about-text-para{
+    font-size: clamp(0.8rem, 1.3vw, 1.8rem);
+}
+
+.about-header {
+    font-family: mainFont;
+    font-size: clamp(1rem, 1.8vw, 2rem);
+    font-weight: bold;
+}
+
+.about-contacts-container{
+    width: 96%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 1vw;
+}
 
