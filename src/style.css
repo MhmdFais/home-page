@@ -51,4 +51,17 @@ body{
     position: relative;
 }
 
+.about-text{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.contact-image{
+    height: auto;
+    width: 2vw;
+}
+
 
