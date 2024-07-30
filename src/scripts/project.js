@@ -24,6 +24,7 @@ function createHeader(){
 }
 
 function createCards(){
+
     const projects = [
         {
             title: 'Project 1',
@@ -68,4 +69,54 @@ function createCards(){
             link: ''
         }
     ];
+
+    projects.forEach((project) => {
+        const projectCardContainer = document.querySelector(".project-card-container");
+        const image = createImage(project.image);
+        projectCardContainer.appendChild(image);
+
+        const title = createTitle(project.title, project.github);
+        projectCardContainer.appendChild(title);
+
+        const description = createDescription(project.description);
+        projectCardContainer.appendChild(description);
+    })
+}
+
+function createImage(image){
+    const imageContainer = document.querySelector(".project-image");
+    imageContainer.classList.add('project-image-container');
+    const projectImage = document.createElement('img');
+    projectImage.src = image;
+    projectImage.classList.add('project-img');
+    imageContainer.appendChild(projectImage);
+    return imageContainer;
+}
+
+function createTitle(title, icon){
+    const projectHeader = document.querySelector(".project-header")
+    const projectTitleContainer = document.querySelector(".project-heading")
+    const projectTitle = document.createElement("p")
+    projectTitle.textContent = title
+    projectTitle.classList.add("project-title")
+    projectTitleContainer.appendChild(projectTitle)
+    projectHeader.appendChild(projectTitleContainer)
+
+    const projectIconContainer = document.querySelector(".links")
+    const projectIcon = document.createElement("img")
+    projectIcon.src = icon
+    projectIcon.classList.add("project-icon")
+    projectIconContainer.appendChild(projectIcon)
+    projectHeader.appendChild(projectIconContainer)
+
+    return projectHeader;
+}
+
+function createDescription(description){
+    const projectDescription = document.querySelector(".project-text")
+    const projectDescriptionText = document.createElement("p")
+    projectDescriptionText.textContent = description
+    projectDescriptionText.classList.add("project-description-text")
+    projectDescription.appendChild(projectDescriptionText)
+    return projectDescription;
 }

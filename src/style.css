@@ -87,3 +87,10 @@ body{
     gap: 1vw;
 }
 
+/* Projects */
+
+.projects-section{
+    padding: 5vh 3vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
