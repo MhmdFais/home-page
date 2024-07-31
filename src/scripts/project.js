@@ -1,30 +1,12 @@
 import Project from '../assets/images/project.jpg'
 import Git from '../assets/images/git.png';
 
-export function projectSection(){
+export function projectSection() {
     createCards();
 }
 
-function createCards(){
+function createCards() {
     const projectsContainer = document.querySelector('.projects-section');
-
-    const header = createHeader();
-    projectsContainer.appendChild(header);
-
-    const cards = createCards();
-}
-
-function createHeader(){
-    const headerContainer = document.querySelector('.projects-heading');
-    const header = document.createElement('p');
-    header.classList.add('projects-header');
-    header.textContent = 'Projects';
-    headerContainer.appendChild(header);
-    return headerContainer;
-}
-
-function createCards(){
-
     const projects = [
         {
             title: 'Project 1',
@@ -71,52 +53,35 @@ function createCards(){
     ];
 
     projects.forEach((project) => {
-        const projectCardContainer = document.querySelector(".project-card-container");
-        const image = createImage(project.image);
-        projectCardContainer.appendChild(image);
+        const card = document.createElement('div');
+        card.classList.add('project-card');
 
-        const title = createTitle(project.title, project.github);
-        projectCardContainer.appendChild(title);
+        const image = document.createElement('img');
+        image.src = project.image;
+        image.classList.add('project-img');
 
-        const description = createDescription(project.description);
-        projectCardContainer.appendChild(description);
-    })
-}
+        const header = document.createElement('div');
+        header.classList.add('project-header');
 
-function createImage(image){
-    const imageContainer = document.querySelector(".project-image");
-    imageContainer.classList.add('project-image-container');
-    const projectImage = document.createElement('img');
-    projectImage.src = image;
-    projectImage.classList.add('project-img');
-    imageContainer.appendChild(projectImage);
-    return imageContainer;
-}
+        const title = document.createElement('p');
+        title.textContent = project.title;
+        title.classList.add('project-title');
 
-function createTitle(title, icon){
-    const projectHeader = document.querySelector(".project-header")
-    const projectTitleContainer = document.querySelector(".project-heading")
-    const projectTitle = document.createElement("p")
-    projectTitle.textContent = title
-    projectTitle.classList.add("project-title")
-    projectTitleContainer.appendChild(projectTitle)
-    projectHeader.appendChild(projectTitleContainer)
+        const icon = document.createElement('img');
+        icon.src = project.github;
+        icon.classList.add('project-icon');
 
-    const projectIconContainer = document.querySelector(".links")
-    const projectIcon = document.createElement("img")
-    projectIcon.src = icon
-    projectIcon.classList.add("project-icon")
-    projectIconContainer.appendChild(projectIcon)
-    projectHeader.appendChild(projectIconContainer)
+        header.appendChild(title);
+        header.appendChild(icon);
 
-    return projectHeader;
-}
+        const description = document.createElement('p');
+        description.textContent = project.description;
+        description.classList.add('project-description');
 
-function createDescription(description){
-    const projectDescription = document.querySelector(".project-text")
-    const projectDescriptionText = document.createElement("p")
-    projectDescriptionText.textContent = description
-    projectDescriptionText.classList.add("project-description-text")
-    projectDescription.appendChild(projectDescriptionText)
-    return projectDescription;
+        card.appendChild(image);
+        card.appendChild(header);
+        card.appendChild(description);
+
+        projectsContainer.appendChild(card);
+    });
 }
