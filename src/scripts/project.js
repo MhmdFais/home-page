@@ -2,7 +2,18 @@ import Project from '../assets/images/project.jpg'
 import Git from '../assets/images/git.png';
 
 export function projectSection() {
+    createHeading();
     createCards();
+}
+
+function createHeading() {
+    const projectsContainer = document.querySelector('.projects-heading');
+
+    const heading = document.createElement('p');
+    heading.textContent = 'Projects';
+    heading.classList.add('projects-heading-text');
+
+    projectsContainer.appendChild(heading);
 }
 
 function createCards() {

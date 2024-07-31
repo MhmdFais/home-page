@@ -5,6 +5,7 @@
 
 :root {
     --main-bg: #a5f3fc;
+    --sub-head-clr : rgb(11, 124, 124);
 }
 
 body {
@@ -74,6 +75,7 @@ body {
     font-family: mainFont;
     font-size: clamp(1rem, 1.8vw, 2rem);
     font-weight: bold;
+    color: var(--sub-head-clr);
 }
 
 .about-contacts-container {
@@ -87,9 +89,15 @@ body {
 
 /* Projects */
 
-.projects-heading {
-    text-align: center;
-    padding: 2vh 0;
+.projects-heading{
+    padding: 2vh 11vw;
+}
+
+.projects-heading-text{
+    padding: 0;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    font-weight: 800;
+    color: var(--sub-head-clr);
 }
 
 .projects-header {
@@ -98,7 +106,7 @@ body {
 }
 
 .projects-section {
-    padding: 5vh 11vw;
+    padding: 2vh 11vw;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2rem;
