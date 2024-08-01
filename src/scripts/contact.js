@@ -19,6 +19,8 @@ function createContact(){
 function createContactText(){
     const textContainer = document.createElement("div");
     textContainer.classList.add("contact-text");
+    const linkImageContainer = document.createElement("div");
+    linkImageContainer.classList.add("link-image-container");
 
     const header = document.createElement("p");
     header.classList.add("contact-header");
@@ -38,7 +40,8 @@ function createContactText(){
     gitImage.alt = "Github";
     gitImage.classList.add("contact-image");
     git.appendChild(gitImage);
-    textContainer.appendChild(git);
+    linkImageContainer.appendChild(git);
+    //textContainer.appendChild(git);
 
     const lin = document.createElement("a");
     lin.href = ""
@@ -48,8 +51,10 @@ function createContactText(){
     linImage.alt = "LinkedIn";
     linImage.classList.add("contact-image");
     lin.appendChild(linImage);
-    textContainer.appendChild(lin);
+    linkImageContainer.appendChild(lin);
+    //textContainer.appendChild(lin);
 
+    textContainer.appendChild(linkImageContainer);
     return textContainer;
 }
 

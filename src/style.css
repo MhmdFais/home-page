@@ -194,3 +194,37 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.link-image-container{
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    align-items: center;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+    .about-section {
+        flex-direction: column;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-image img {
+        width: 100%;
+    }
+
+    .projects-section {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+}
